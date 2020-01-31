@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Tweet Sentiment analyzer</title>
+    <link rel="stylesheet" href="../static/css/materialize.css" media="screen,projection" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper">
+        <h5 id="logo-container" class="brand-logo center">T W E E T S M A K I N G S E N S E</h5>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <form name="upload" id="upload-info" class="col s12">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">search</i>
+            <input name="searchtweet" id="search" type="text" class="validate" required>
+            <label for="search">Search Tweet</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix right-align">calender_today</i>
+            <input name="date" class="datepicker" id="calender_today" type="text" class="validate" required>
+            <label for="calender_today">Enter date</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">money</i>
+            <input name="tweetcount" id="money" type="number" min="1" max="1000" class="validate" required>
+            <label for="money">Enter tweet count(must be <=1000)</label>
+          </div>
+          <div class="col s12">
+            <button id="upload-input-btn" class="btn light-blue lighten-1" type="submit">Submit</button>
+            <button id="upload-reset-btn" class="btn light-blue lighten-1" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col s6 right-align">
+          <a id="display_tweets_btn" class="#90caf9 blue lighten-3 btn-large" href="#btn1"><i class="material-icons right">eco</i>Display Tweets</a>
+        </div>
+        <div class="col s6 right-align">
+          <a id="display_wordcloud_btn" class="#90caf9 blue lighten-3 btn-large" href="#btn2"><i class="material-icons right">bar_chart</i>Show Report</a>
+        </div>
+      </div>
+      <div class="row">
+        <div id="displaytweets" class="col s12">
+          <div class="progress" style="display: none !important;">
+            <div class="indeterminate light-blue lighten-1"></div>
+          </div>
+          <div id="tweets" class="card-panel" style="display: none !important;">
+            
+          </div>
+          <canvas id="dataViz" class="card-panel" style="display: none !important;">
+            
+          </canvas>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    
+    <script src="../static/js/app.js"></script>
+    
+    
+
+  </body>
+</html>
